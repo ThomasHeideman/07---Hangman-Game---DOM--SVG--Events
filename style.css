@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* :root {
+    --variable: value;
+  } */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  background: rgb(0, 105, 189);
+  background: radial-gradient(
+    circle,
+    rgba(0, 105, 189, 1) 0%,
+    rgba(9, 9, 121, 1) 67%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 1.5rem 0 0;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.figure-part {
+  display: none;
+}
+
+.game-container {
+  padding: 1.5rem 2rem;
+  position: relative;
+  margin: auto;
+  height: 500px;
+  width: 600px;
+}
+.wrong-letters-container {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.wrong-letters-container div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  justify-content: end;
+}
+
+.wrong-letters-container p {
+  margin: 0 0 0.5rem;
+  flex: 1 0 100%;
+}
+
+.wrong-letters-container span {
+  font-size: 1.5rem;
+  flex: 0 0 32%;
+}
+
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.letter {
+  border-bottom: 5px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.25rem;
+  height: 3rem;
+  width: 2rem;
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: #939ea5;
+  border-radius: 0.25rem;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px, rgb(0, 0, 7) 0px 20px 40px -10px;
+}
+
+.popup button {
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 0.125rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-top: 1.5rem;
+  transition: all 150ms ease;
+}
+
+.popup button:hover {
+  background-color: #eee;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 5px, rgba(0, 0, 0, 0.25) 0px 2px 5px;
+  /* transform: scale(0.99); */
+}
+.popup button:active {
+  background-color: #eee;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 4px, rgba(0, 0, 0, 0.25) 0px 1px 4px;
+  transform: scale(0.98);
+}
+
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem 0.75rem 0 0;
+  padding: 2rem 2.5rem;
+  position: absolute;
+  bottom: -90px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 7px, rgba(0, 0, 0, 0.2) 0px 3px 7px;
+  transition: transform 500ms ease-in-out;
+}
+.notification-container.show {
+  transform: translateY(-100%);
+}
+
+.notification-container p {
+  margin: 0;
+}
